@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台内容管理</title>
+	<link rel="stylesheet" href="__PUBLIC__/bs/css/bootstrap.min.css">
+	<script src="__PUBLIC__/bs/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/bs/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<!-- <button class="btn btn-success">商品添加页面</button> -->
+			<!-- 	<input type="button" class="btn btn-success" value="商品添加页面" href="{:U(adds)}" /> -->
+			<a href="{:U('Admin/Index/index')}"><input type="button" value="返回" class="btn btn-success" style="float:right;"></input></a>
+			<a href="{:U(adds)}"><input type="button" value="标题图片上传" class="btn btn-success"></input></a>
+			</div>
+			<table class="table table-bordered">
+				<th>ID</th>
+				<th>标题</th>
+				<th>图片</th>
+				<!-- <th>DEl</th> -->
+				<volist name="data" id="ppp">
+					<tr>
+						<td>{$ppp.id}</td>
+						<td>{$ppp[name]}</td>
+						<td><img src="{$ppp[img]}" alt=""></td>
+						<td><a onclick="del(this,{$ppp.id})" href="{:U('index')}">删除</a></td>
+					</tr>
+				</volist>
+			</table>
+			<div class="panel-footer">
+				<p>{$show}</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+		function del(obj,id){
+		// 发送ajax请求
+		$.post('{:U("ajax_del")}',{id:id},function(data){
+			// 判断删除成功和失败
+			if (data==1) {
+				// 移除数据
+
+				$(obj).parent().parent().remove();
+
+				// 获取数据条数
+				// tot=$("#tot").html();
+				// $("#tot").html(--tot);
+			}else{
+				alert('删除失败');
+			}
+		});
+	}
+</script>
+</html>
