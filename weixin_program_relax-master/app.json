@@ -1,0 +1,49 @@
+{
+    "pages": [
+        "pages/index/index", 
+        "pages/music/music",
+        "pages/funny_img/funny_img",
+        "pages/content/content",
+        "pages/funny_gif/funny_gif",
+        "pages/talking_bot/talking_bot"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "每日嘻哈秀",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#aaa",
+        "fontSize": "15px",
+        "selectedColor": "#1AAD19",
+        "borderStyle": "#ccc",
+        "backgroundColor": "#fcfcfc",
+        "list": [
+            {
+                "pagePath": "pages/funny_img/funny_img",
+                "text": "搞笑图片",
+                "iconPath": "img/icon_img.png",
+                "selectedIconPath": "img/icon_img_active.png"
+            },
+            {
+                "pagePath": "pages/funny_gif/funny_gif",
+                "text": "搞笑动态图",
+                "iconPath": "img/icon_gif.png",
+                "selectedIconPath": "img/icon_gif_active.png"
+            },
+            {
+                "pagePath": "pages/music/music",
+                "text": "音乐",
+                "iconPath": "img/music2.png",
+                "selectedIconPath": "img/music.png"
+            },
+            {
+                "pagePath": "pages/talking_bot/talking_bot",
+                "text": "聊天机器人",
+                "iconPath": "img/icon_bot.png",
+                "selectedIconPath": "img/icon_bot_active.png"
+            }
+        ]
+    }
+}

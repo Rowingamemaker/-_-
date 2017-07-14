@@ -1,0 +1,46 @@
+<!--pages/content/content.wxml-->
+<!--<text>pages/content/content.wxml</text>-->
+<view class="box">
+  <!--头部-->
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-cells__title">评论区</view>
+      <view class="weui-cells weui-cells_after-title">
+        <!--图片-->
+        <view class="weui-cell__bd article_title">
+          <image src="../../img/icon_cry.png"></image>
+          {{name}}
+        </view>
+        <image class="article_gif" src="{{img}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="replies">
+    <block wx:for="{{replies}}" wx:key="*this">
+      <!--回复区-->
+      <!--<block wx:for="[1,2,3,4,5]">-->
+      <view class="replies-item" id="{{item.id}}">
+        <view class="reply-owner">
+          <image class="reply-avatar" src="{{item.imguid}}"></image>
+          <text class="reply-name">{{item.nameuid}}</text>
+          <text class="reply-time">{{item.timeuid}}</text>
+        </view>
+        <view class="reply-content">
+          {{item.contentuid}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!--评论-->
+        <!--文字框-->
+<view class="bottom">
+  <view class="send">
+    <view class="send-text">
+      <view class="send-text-box">
+        <input type="text" placeholder="请输入文字" bindinput="msg" value="{{inputMsg}}" />
+      </view>
+    </view>
+    <button class="send-btn" catchtap="sendMsg" disabled="{{isSendMsgBtnDisabled}}">发送</button>
+  </view>
+</view>

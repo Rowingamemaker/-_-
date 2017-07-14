@@ -1,0 +1,14 @@
+<view class="jx_card" style="width: 150%;height: 100vh;background-color:#e6e6e6;position: relative;">
+  <image class="jxlogo" src="../../img/5.png" style="left: {{yidong}}rpx;width:100%;height: 100vh;float: left;position: absolute;"></image>
+</view>
+<view class="box">
+  <view class="container" bindtap="bindViewTap">
+    <view  class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view class="usermotto">
+      <button class="user-motto" plain="true">{{motto}}</button>
+    </view>
+  </view>
+</view>
